@@ -18,6 +18,8 @@ import me.zhanghai.android.files.ui.LicensesDialogFragment
 import me.zhanghai.android.files.util.createViewIntent
 import me.zhanghai.android.files.util.startActivitySafe
 
+
+
 class AboutFragment : Fragment() {
     private lateinit var binding: AboutFragmentBinding
 
@@ -37,6 +39,10 @@ class AboutFragment : Fragment() {
         activity.setSupportActionBar(binding.toolbar)
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.gitHubLayout.setOnClickListener { startActivitySafe(GITHUB_URI.createViewIntent()) }
+
+        //mycode
+        binding.bingLayout.setOnClickListener { startActivitySafe(BING_URI.createViewIntent()) }
+
         binding.licensesLayout.setOnClickListener { LicensesDialogFragment.show(this) }
 //#ifdef NONFREE
         binding.privacyPolicyLayout.isVisible = true
@@ -59,6 +65,7 @@ class AboutFragment : Fragment() {
     }
 
     companion object {
+        private val BING_URI = Uri.parse("https://www.bing.com")
         private val GITHUB_URI = Uri.parse("https://github.com/zhanghai/MaterialFiles")
         private val PRIVACY_POLICY_URI =
             Uri.parse("https://github.com/zhanghai/MaterialFiles/blob/master/PRIVACY.md")
