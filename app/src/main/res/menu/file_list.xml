@@ -12,6 +12,13 @@
     tools:ignore="AlwaysShowAction">
 
     <item
+        android:id="@+id/helloworld"
+        android:icon="@android:mipmap/sym_def_app_icon"
+        android:orderInCategory="100"
+        android:title="Hi"
+        app:actionViewClass="me.zhanghai.android.files.ui.FixQueryChangeSearchView"
+        app:showAsAction="always|collapseActionView" />
+    <item
         android:id="@+id/action_search"
         android:icon="@drawable/search_icon_control_normal_24dp"
         android:orderInCategory="100"

@@ -8,7 +8,6 @@ package me.zhanghai.android.files.filelist
 import android.Manifest
 import android.app.Activity
 import android.content.ClipData
-import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -111,6 +110,7 @@ import me.zhanghai.android.files.util.withChooser
 import me.zhanghai.android.files.viewer.image.ImageViewerActivity
 import pub.devrel.easypermissions.AfterPermissionGranted
 import java.util.LinkedHashSet
+import android.content.Intent as Intent
 
 class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.Listener,
     OpenApkDialogFragment.Listener, ConfirmDeleteFilesDialogFragment.Listener,
@@ -432,9 +432,16 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
                 createShortcut()
                 true
             }
+            R.id.helloworld ->{
+                newTask()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
+
+
     }
+
 
     fun onBackPressed(): Boolean {
         val drawerLayout = binding.drawerLayout
@@ -1326,7 +1333,9 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
         val sortDirectoriesFirstItem: MenuItem,
         val sortPathSpecificItem: MenuItem,
         val selectAllItem: MenuItem,
-        val showHiddenFilesItem: MenuItem
+        val showHiddenFilesItem: MenuItem,
+
+        //val helloworld: MenuItem
     ) {
         companion object {
             fun inflate(menu: Menu, inflater: MenuInflater): MenuBinding {
@@ -1342,6 +1351,8 @@ class FileListFragment : Fragment(), BreadcrumbLayout.Listener, FileListAdapter.
                     menu.findItem(R.id.action_sort_path_specific),
                     menu.findItem(R.id.action_select_all),
                     menu.findItem(R.id.action_show_hidden_files)
+
+                    //menu.findItem(R.id.helloworld)
                 )
             }
         }
