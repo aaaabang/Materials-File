@@ -10,7 +10,7 @@
     <string name="app_name">Material Files</string>
 
     <string name="close">Close</string>
-    <string name="copy">Copy</string>
+    <string name="copy">Copy File</string>
     <string name="cut">Cut</string>
     <string name="default_">Default</string>
     <string name="delete">Delete</string>
